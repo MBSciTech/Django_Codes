@@ -1,8 +1,6 @@
 # Django_Codes
 Learning Django of University.
 
-Here’s a concise and comprehensive set of **Django notes** for beginners to intermediate learners. This can help you in quick revisions, project development, or interviews.
-
 ---
 
 # 🐍 Django Notes
@@ -302,7 +300,3 @@ project/
 ├── static/
 └── media/
 ```
-
----
-
-If you want this in a **PDF or printable format**, just ask and I can generate it for you. Want advanced Django topics (like signals, custom middleware, REST APIs with DRF)? Let me know!
