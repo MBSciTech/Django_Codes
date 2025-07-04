@@ -6,7 +6,7 @@ def demoview(request):
     context = {
         'name' : 'john',
         'age' : 50,
-        'number' : [1,2,3,4],
+        'numbers' : [1,2,3,4],
         'show_numbers' : True,
     }
     return render(request,'templateapp/demoview.html',context)
