@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}My django website{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>My Django Web</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+        </nav>
+    </header>
+    <div>
+        {% block content%}{% endblock %}
+    </div>
+    <footer>
+        &copy Microsoft windows 11 my Django website
+    </footer>
+</body>
+</html>
