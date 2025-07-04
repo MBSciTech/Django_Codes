@@ -10,3 +10,6 @@ def demoview(request):
         'show_numbers' : True,
     }
     return render(request,'templateapp/demoview.html',context)
+
+def home(request):
+    return HttpResponse('Home page')
