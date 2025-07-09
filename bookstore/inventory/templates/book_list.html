@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Book list{% endblock%}
+{% block content %}
+<h1>Book list</h1>
+<form method="get">
+    <input type="text" name="q" placeholder="search.." value="{{query|default:''}}">
+    <button type="submit"> Search</button>
+</form>
+<ul>
+    {% if book %}
+    {% for book in books %}
+    {% include "book_card.html" %}
+    {% endfor %}
+    {% else %}
+    <li>No book found</li>
+    {% endif %}
+
+</ul>
+{% endblock %}

@@ -1,0 +1,6 @@
+<li>
+    <strong>
+        {{book.title}}
+    </strong>by {{book.author}} -Rs {{book.price}}
+    <a href="{% url 'book_details' book.pk}"><button>Details</button></a>
+</li>
