@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            justify-content:center;
+            align-item:center;
+            display : grid;
+            
+        }
+
+        div{
+            border:3px solid blue;
+            border-radius:16px;
+            width:300px;
+            padding:10px;
+        }
+        h1{
+            font-family : arial;
+        }
+
+        a {
+            text-decoration : none;
+            color : white;
+            font-family:arial;
+            background-color:green;
+            padding : 9px;
+            border-radius:12px;
+        }
+
+        ul li{
+            font-family:arial;
+            padding:10px;
+        }
+
+        #delete{
+            text-decoration : none;
+            color : white;
+            font-family:arial;
+            background-color:red;
+            padding : 9px;
+            border-radius:12px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Student records</h1>
+    <a href='{% url "student_create" %}'>Add Student </a>
+    <ul>
+        {% for student in students%}
+        <li>
+            {{student.name}} - {{student.course}}
+            <a href='{% url "student_update" student.pk %}'>Edit</a>
+            <a id='delete' href='{% url "student_delete" student.pk %}'>Delete</a>
+        </li>
+        {% empty %}
+        <li>No student found</li>
+        {% endfor %}
+    </div>
+</body>
+</html>
