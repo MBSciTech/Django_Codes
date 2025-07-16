@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Book</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px;
+            text-align: center;
+        }
+        h2 {
+            color: #d32f2f;
+            margin-bottom: 18px;
+        }
+        p {
+            color: #444;
+            margin-bottom: 28px;
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        button, .cancel-link {
+            padding: 10px 22px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button {
+            background: #d32f2f;
+            color: #fff;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #b71c1c;
+        }
+        .cancel-link {
+            background: #f0f4f8;
+            color: #1976d2;
+            border: 1px solid #d0d7de;
+        }
+        .cancel-link:hover {
+            background: #e3eaf3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Delete Book</h2>
+        <p>Are you sure you want to delete <strong>{{ book.title }}</strong> by {{ book.author }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="actions">
+                <button type="submit">Yes, Delete</button>
+                <a href="{% url 'book_list' %}" class="cancel-link">Cancel</a>
+            </div>
+        </form>
+    </div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 24px;
+        }
+        a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f0f4f8;
+            margin-bottom: 12px;
+            padding: 16px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        .add-book-link {
+            display: block;
+            text-align: right;
+            margin-bottom: 18px;
+        }
+        .no-book {
+            text-align: center;
+            color: #888;
+            background: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Book List</h1>
+        <a class="add-book-link" href="{% url 'add_book' %}">Add new Book</a>
+        <ul>
+            {% for book in books %}
+                <li>
+                    <span>{{book.title}} by {{book.author}} - {{book.price}} - {{book.published_date}}</span>
+                    <a href="{% url "delete_book" book.pk %}">Delete</a>
+                </li>
+            {% empty %}
+            <li class="no-book">no book found</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
