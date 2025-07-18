@@ -300,3 +300,14 @@ project/
 ├── static/
 └── media/
 ```
+
+
+# Offline IMP
+(1)Auth(login/logout)
+(2)CRUD operations
+(3)Models/Views
+
+# Online IMP
+(1)Auth(login/logout)
+(2)CRUD operations
+(3)Templates
